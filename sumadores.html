@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <title>Jessica Perez</title>
 
     <!-- panditas -->
-    <link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+    <link href="bootstrap-4.0.0.css" rel="stylesheet">
 
   </head>
   <body>
@@ -61,27 +61,27 @@
      <h3>Semisumador</h3>
      <br>
      <p>El semisumador suma dos dígitos binarios simples A y B, denominados sumandos, y sus salidas son Suma (S) y Acarreo (C). La señal de acarreo representa un desbordamiento en el siguiente dígito en una adición de varios dígitos. El diseño más simple de semisumador, representado a la derecha, incorpora una puerta XOR para S y una puerta AND para C. Dos semisumadores pueden ser combinados para hacer un sumador completo, añadiendo una puerta OR para combinar sus salidas de acarreo.1​ La tabla de verdad para el semisumador se detalla seguidamente:</p>
-      <img src="C:\Users\jessica\Documents\Jessica\imagenes\entrada y salida.png" width="300"  geight="150" alt="entradas y salidas"/>
+      <img src="entrada y salida.png" width="300"  geight="150" alt="entradas y salidas"/>
       <h4><em> funcionamiento de un semisumador</em></h4>
-        <img src="C:\Users\jessica\Documents\Jessica\imagenes\funcionamiento del semisumador.gif" width="250"  geight="150" alt="funcionamiento de un semisumador"/>
+        <img src="funcionamiento del semisumador.gif" width="250"  geight="150" alt="funcionamiento de un semisumador"/>
   <hr class="my-4" <font color="colors">
      <h3>Sumador completo</h3>
      <br>
      <p>Un sumador completo suma números binarios junto con las cantidades de acarreo. Un sumador completo de un bit añade tres bits, a menudo escritos como A, B y Cin siendo A y B son los sumandos y Cin es el acarreo que proviene de la anterior etapa menos significativa. 1​ El sumador completo suele ser un componente de una cascada de sumadores, que suman 8, 16, 32, etc. números binarios de bits. El circuito produce una salida de dos bits, al igual que el semisumador, denominadas acarreo de salida (Cout) y suma S.</p>
      <p>Un sumador completo se puede implementar de muchas maneras diferentes, tales como con un circuito a transistores o compuesto de otras puertas. Un ejemplo de implementación es expresado con las siguientes ecuaciones:</p>
-      <img src="C:\Users\jessica\Documents\Jessica\imagenes\ecuaciones.png" width="300"  geight="150" alt="numeros"/>
+      <img src="ecuaciones.png" width="300"  geight="150" alt="numeros"/>
       <h4><em>Funcionamiento de un sumador completo</em></h4>
-      <img src="C:\Users\jessica\Documents\Jessica\imagenes\funcionamiento de un sumador completo.gif" width="250"  geight="150" alt="funcionamiento de un sumador completo"/>
+      <img src="funcionamiento de un sumador completo.gif" width="250"  geight="150" alt="funcionamiento de un sumador completo"/>
      <br>
      <p>En esta implementación, la puerta OR final antes del acarreo de salida puede ser reemplazada por una puerta XOR sin alterar la lógica resultante. El uso de sólo dos tipos de compuertas es conveniente si el circuito se está implementando usando circuitos integrados que contienen sólo un tipo de puerta.</P>
 <p>Se puede construir un sumador completo a partir de dos semisumadores conectando las entradas A y B a la entrada de un primer semisumador, conectando su salida de suma a una de las entradas del segundo semisumador, conectando el acarreo de entrada Cin a la otra entrada y conectando los acarreos de salida de los semisumadores a una puerta OR. La ruta crítica de un sumador completo recorre ambas puertas XOR y hasta llegar a la salida S. Suponiendo que una puerta XOR tenga un retardo D, el retardo total por el camino crítico de un sumador completo es igual a:</p>
- <img src="C:\Users\jessica\Documents\Jessica\imagenes\sumador completo.png" width="300"  geight="150" alt="ecuacion"/>
+ <img src="sumador completo.png" width="300"  geight="150" alt="ecuacion"/>
   <p>En cambio, la ruta crítica para la señal de acarreo recorre una puerta XOR, una AND y otra OR. Si cada una de estas puertas digitales presenta un retardo D, el retardo total es:</p>
- <img src="C:\Users\jessica\Documents\Jessica\imagenes\retrato total.png" width="300"  geight="150" alt="ecuacion"/>
+ <img src="retrato total.png" width="300"  geight="150" alt="ecuacion"/>
  <br>
 <p> La tabla de verdad del sumador completo es la siguiente:</p>
 <br>
- <img src="C:\Users\jessica\Documents\Jessica\imagenes\tabla de verdad.png" width="250"  geight="150" alt="tabla"/>
+ <img src="tabla de verdad.png" width="250"  geight="150" alt="tabla"/>
  <br>
    <hr class="my-4" <font color="blue">
      <h3>Sumadores que soportan varios bits</h3>
@@ -90,10 +90,10 @@
       <br>
       <p>Un sumador con propagación de acarreo, también denominado sumador de acarreo serie, es aquel constituido por varios sumadores completos en los cuales el acarreo de salida se conecta a la entrada de acarreo del sumador siguiente. Sin embargo, puede observarse que el primero de los sumadores puede ser reemplazado por un semisumador suponiendo que el acarreo de entrada Cin es cero.</p>
       <br>
-      <img src="C:\Users\jessica\Documents\Jessica\imagenes\sumador de 4 bits.png" width="350"  geight="150" alt="ecuacion"/>
+      <img src="sumador de 4 bits.png" width="350"  geight="150" alt="ecuacion"/>
       <br>
 <p>El esquema de un sumador de acarreo serie es sencillo, lo que implica un corto tiempo de diseño; sin embargo, el sumador es relativamente lento ya que cada etapa debe esperar que se calcule un acarreo de entrada de la etapa previa. El retardo de propagación puede ser fácilmente calculado por un inspección del esquema circuital. Cada sumador completo requiere tres niveles de lógica. En un sumador de acarreo serie de 32 bits, existen 32 sumadores completos de modo que el retardo en la ruta crítica (en el peor de los casos) es de 3 X 31 (desde la primera etapa hasta la última) sumando 2 retardos más en el último sumador, dando un total de 95 veces el retardo de una puerta lógica. La ecuación general que expresa el retardo para el peor de los casos, para un sumador de n bits, es:</p>
-<img src="C:\Users\jessica\Documents\Jessica\imagenes\ecuasion de otros.png" width="500"  geight="400" alt="ecuacion"/>
+<img src="ecuasion de otros.png" width="500"  geight="400" alt="ecuacion"/>
 <br>
 <p>Un arreglo alternativo que puede ser aproximadamente el doble de rápido, es un diseño implementado con polaridades de acarreo alternadas y un arreglo optimizado de puertas lógicas AND-OR-Inversor.</p>
 <br>
@@ -115,10 +115,10 @@
        </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap-4.0.0.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap-4.0.0.js"></script>
   </body>
 </html>
